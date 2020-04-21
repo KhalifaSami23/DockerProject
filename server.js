@@ -10,9 +10,6 @@ app.use(bodyparser.json())
 app.use('/api/user', userRoute)
 app.use('/api/post', postRoute)
 
-app.post('/', (req, res) => {
-    res.json('ntm')
-})
 
  
 
