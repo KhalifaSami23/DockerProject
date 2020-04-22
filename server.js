@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyparser = require('body-parser')
 const path = require('path')
+const mongoose = require('mongoose')
 //ROUTES
 const userRoute = require('./routes/user')
 const postRoute = require('./routes/post')
@@ -23,4 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log('Server connected on port' + port))
+app.listen(port, () =>  {
+    mongoose.connect('mongodb+srv://admin:admin@cluster0-bcoum.gcp.mongodb.net/dockerBlog?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+    console.log('Server connected on port' + port)
+})
