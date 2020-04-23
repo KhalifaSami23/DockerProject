@@ -2,12 +2,14 @@ const express = require('express')
 const bodyparser = require('body-parser')
 const path = require('path')
 const mongoose = require('mongoose')
+const cors = require('cors')
 //ROUTES
 const userRoute = require('./routes/user')
 const postRoute = require('./routes/post')
 
 const app = express()
 app.use(bodyparser.json())
+app.use(cors())
 app.use('/api/user', userRoute)
 app.use('/api/post', postRoute)
 
