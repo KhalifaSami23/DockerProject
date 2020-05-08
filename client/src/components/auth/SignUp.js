@@ -37,7 +37,7 @@ const SignUp = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:80/api/user/register", form).then((res) => {
+    axios.post("http://localhost:8080/api/user/register", form).then((res) => {
       if (res.statusText === "ERROR") {
         setSnackbar({
           open: true,

@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 app.listen(port, () =>  {
     mongoose.connect('mongodb+srv://admin:admin@cluster0-bcoum.gcp.mongodb.net/dockerBlog?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
     console.log('Server connected on port' + port)
